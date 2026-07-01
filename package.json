@@ -17,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/rishitag10/testmu-sdet1-rishita/issues"
   },
-  "homepage": "https://github.com/rishitag10/testmu-sdet1-rishita#readme"
+  "homepage": "https://github.com/rishitag10/testmu-sdet1-rishita#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.0.0",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.0",
+    "allure-playwright": "^3.10.2",
+    "axios": "^1.18.1",
+    "dotenv": "^17.4.2",
+    "playwright": "^1.61.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
 }
