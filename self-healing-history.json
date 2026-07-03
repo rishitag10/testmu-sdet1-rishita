@@ -1,0 +1,8 @@
+[
+  {
+    "originalSelector": "input[name='usernameXYZ']",
+    "healedSelector": "input[name=\"username\"]",
+    "description": "username input field",
+    "timestamp": "2026-07-03T17:46:34.460Z"
+  }
+]

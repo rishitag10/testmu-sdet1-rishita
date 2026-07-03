@@ -43,23 +43,20 @@ export class LoginPage {
 
     async login(username: string, password: string) {
 
-    const usernameField = await this.healer.findElement([
-        "input[name='username']",
-        "input[placeholder='Username']",
-        "#username"
-    ]);
+    const usernameField = await this.healer.findElement(
+  ["#username", "input[placeholder='Username']", "input[name='username']"],
+  "username input field"
+);
 
-    const passwordField = await this.healer.findElement([
-        "input[name='password']",
-        "input[placeholder='Password']",
-        "#password"
-    ]);
+const passwordField = await this.healer.findElement(
+    ["input[name='password']", "input[placeholder='Password']", "#password"],
+    "password input field"
+);
 
-    const loginButton = await this.healer.findElement([
-        "button[type='submit']",
-        "button:has-text('Login')",
-        ".oxd-button"
-    ]);
+const loginButton = await this.healer.findElement(
+    ["button[type='submit']", "button:has-text('Login')", ".oxd-button"],
+    "login submit button"
+);
 
     await usernameField.fill(username);
     await passwordField.fill(password);

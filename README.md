@@ -78,6 +78,7 @@ Generated feature files are saved inside:
 ```
 src/features/generated/
 ```
+**Note:** AI-generated feature files use different Gherkin phrasing than the hand-written suite and don't yet have step definitions wired to them — they're generated artifacts demonstrating AI test-design capability, not part of the executing test suite. Run `npm test` for the real, passing suite (13/13 scenarios). A separate `npm run test:generated` profile is configured for when these are wired up.
 
 ---
 
@@ -85,7 +86,9 @@ src/features/generated/
 
 A lightweight self-healing agent has been implemented to improve locator resilience.
 
-Instead of relying on a single locator, the agent attempts multiple locator strategies before failing the test. This reduces maintenance effort when UI elements change.
+Instead of relying on a single locator, the agent attempts multiple locator strategies before falling back to an AI-suggested selector (via Gemini) generated from a live DOM snapshot. Healed selectors are cached in `self-healing-history.json` and reused on subsequent runs.
+
+**Verified:** manually tested by deliberately breaking all fallback locators for the username field — the agent correctly detected the failure, queried Gemini, received and validated a working replacement selector, and the test passed. Subsequent runs reused the cached healed selector without re-calling the AI.
 
 ---
 
@@ -125,6 +128,8 @@ GEMINI_API_KEY=your_api_key_here
 ```bash
 npm test
 ```
+
+This runs the 13 hand-written scenarios (Login, Dashboard, API) — all passing. AI-generated feature files are excluded from this run (see AI Test Case Generator section above).
 
 ---
 

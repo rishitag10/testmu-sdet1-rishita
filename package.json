@@ -6,7 +6,8 @@
   "scripts": {
     "test": "cucumber-js",
     "generate-tests": "ts-node src/ai/agents/TestCaseGenerator.ts",
-    "explain-failure": "ts-node src/ai/agents/FailureExplainer.ts"
+    "explain-failure": "ts-node src/ai/agents/FailureExplainer.ts",
+    "test:generated": "cucumber-js --profile generated"
   },
   "repository": {
     "type": "git",

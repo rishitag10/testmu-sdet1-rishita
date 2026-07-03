@@ -1,18 +1,12 @@
 module.exports = {
   default: {
-    require: [
-      "src/stepDefinitions/**/*.ts",
-      "src/hooks/**/*.ts"
-    ],
-    paths: [
-      "src/features/**/*.feature"
-    ],
-    requireModule: [
-      "ts-node/register"
-    ],
-    format: [
-      "progress",
-      "html:test-results/cucumber_report.html"
-    ]
-  }
+    paths: ["src/features/*.feature"], // excludes generated/
+    require: ["src/stepDefinitions/**/*.ts", "src/hooks/**/*.ts"],
+    requireModule: ["ts-node/register"],
+  },
+  generated: {
+    paths: ["src/features/generated/**/*.feature"],
+    require: ["src/stepDefinitions/**/*.ts", "src/hooks/**/*.ts"],
+    requireModule: ["ts-node/register"],
+  },
 };
